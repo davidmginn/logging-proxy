@@ -1,21 +1,21 @@
 ﻿using System;
 namespace LoggingWrapper
 {
-	public class GenericLogger
-	{
-		public static TResult LogEntryAndExit<TResult>(Func<TResult> func)
-		{
+    public class GenericLogger
+    {
+        public static TResult LogEntryAndExit<TResult>(Func<TResult> func)
+        {
             Console.WriteLine("Function Entry"); // Call to begin invokation of AI Logging
 
-			var result = func();
+            var result = func();
 
-			Console.WriteLine("Function Exit"); // AI Logging complete
+            Console.WriteLine("Function Exit"); // AI Logging complete
 
-			return result;
-		}
+            return result;
+        }
 
-		public static TResult LogEntryAndExit<T, TResult>(Func<T, TResult> func, T arg)
-		{
+        public static TResult LogEntryAndExit<T, TResult>(Func<T, TResult> func, T arg)
+        {
             Console.WriteLine("Function Entry"); // Call to begin invokation of AI Logging
 
             var result = func(arg);
