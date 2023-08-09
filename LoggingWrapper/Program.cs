@@ -4,7 +4,7 @@ namespace LoggingWrapper;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         Console.WriteLine("Hello, World!");
 
@@ -13,6 +13,10 @@ class Program
         var people = service.GetPeople();
 
         var person = service.GetPerson(1);
+
+        var asyncPeople = await service.GetPeopleAsync();
+
+        var asyncPerson = await service.GetPersonAsync(2);
 
         Console.ReadKey();
     }
